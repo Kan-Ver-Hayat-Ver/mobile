@@ -19,7 +19,6 @@ import HomeScreen from './src/screens/Home/index';
 const Stack = createStackNavigator();
 
 // Context
-
 import {KVProvider} from './src/core/context';
 
 const AppContext = createContext();
