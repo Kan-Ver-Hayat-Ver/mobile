@@ -10,14 +10,14 @@ api.defaults.headers = {
   Accept: 'application/json',
 };
 
-export const login = (username, password) => {
-  let body = {
-    email: username,
-    password: password,
-  };
+export const login = (device_id) => {
+  console.log(device_id);
+  // let body = {
+  //   device_id,
+  // };
 
-  let url = 'login';
-  return api.post(url, body);
+  // let url = 'login';
+  // return api.post(url, body);
 };
 
 export const register = (

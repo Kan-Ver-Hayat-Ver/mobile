@@ -35,12 +35,6 @@ export class KVProvider extends React.Component {
     }
   };
 
-  handleLogout = () => {
-    enbableOnboarding();
-    removeUser();
-    this.setState({user: null, isLoggedIn: false});
-  };
-
   //   checkConnection = async () => {
   //     return await NetInfo.fetch();
   //   };
@@ -57,6 +51,7 @@ export class KVProvider extends React.Component {
           ...this.state,
           login: this.login,
           logout: this.handleLogout,
+          checkUser: this.checkUser,
         }}>
         {children}
       </KVContext.Provider>

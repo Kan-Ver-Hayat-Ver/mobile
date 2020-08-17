@@ -1,5 +1,10 @@
 import {Dimensions, Platform, NativeModules} from 'react-native';
 export const {width, height} = Dimensions.get('window');
+import DeviceInfo from 'react-native-device-info';
+
+export const getDeviceInfo = () => {
+  return DeviceInfo.getUniqueId();
+};
 
 export const logy = (e) => {
   if (__DEV__) {

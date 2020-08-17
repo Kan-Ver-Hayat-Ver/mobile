@@ -1,11 +1,20 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import {logy} from './constants';
+import {logy, getDeviceInfo} from './constants';
 
 export const disableOnboarding = async () => {
   try {
     await AsyncStorage.setItem('@kv:displayOnboarding', '0');
   } catch (e) {
     logy(e);
+  }
+};
+
+export const setDeviceInfo = async () => {
+  try {
+    await AsyncStorage.setItem('@kv:deviceId', getDeviceInfo);
+  } catch (e) {
+    logy(e);
+    //todo how to handle stuff
   }
 };
 
