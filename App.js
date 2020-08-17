@@ -8,7 +8,7 @@
 
 import React, {createContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {Image} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -20,6 +20,7 @@ import ProfileScreen from './src/screens/Profile/index';
 import TopScreen from './src/screens/toplist/index';
 import OnboardScreen from './src/screens/Onboard/index';
 import ControllerScreen from './src/screens/ControllerScreen/index';
+import AddDonationScreen from './src/screens/AddDonation/index';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,6 +45,16 @@ const MainStack = () => {
       <Stack.Screen
         name="Main"
         component={HomeScreen}
+        options={{
+          headerTitle: (props) => <LogoTitle {...props} />,
+          headerStyle: {
+            backgroundColor: '#FF2744',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Add"
+        component={AddDonationScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
           headerStyle: {
